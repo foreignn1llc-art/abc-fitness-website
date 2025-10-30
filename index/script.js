@@ -1,44 +1,61 @@
-// script.js — ABC Fitness Studio Dynamic Features
+// --- Global Cart Status (for Gallery Page logic) ---
+let cart_items = 0;
 
-// ====== SUBSCRIBE FEATURE (Footer) ======
-document.addEventListener("DOMContentLoaded", () => {
-  const subscribeButtons = document.querySelectorAll(".subscribe-btn");
+// --- 1. Subscribe Feature (Footer) ---
+// Targets the Subscribe button using its unique ID
+const subscribeButton = document.getElementById('subscribe-btn');
 
-  subscribeButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      alert("Thank you for subscribing.");
+if (subscribeButton) {
+    subscribeButton.addEventListener('click', function() {
+        alert("Thank you for subscribing.");
     });
-  });
-});
-
-// ====== GALLERY PAGE CART FEATURE ======
-let cartCount = 0;
-
-function addToCart() {
-  cartCount++;
-  alert("Item added to the cart");
 }
 
-function clearCart() {
-  if (cartCount > 0) {
-    cartCount = 0;
-    alert("Cart cleared");
-  } else {
-    alert("No items to clear");
-  }
+// --- 2. Gallery Page Functionality ---
+// Targets the three unique gallery buttons
+const addToCartButton = document.getElementById('add-to-cart-btn');
+const clearCartButton = document.getElementById('clear-cart-btn');
+const processOrderButton = document.getElementById('process-order-btn');
+
+// ADD TO CART (always adds item and alerts)
+if (addToCartButton) {
+    addToCartButton.addEventListener('click', function() {
+        cart_items++;
+        alert("Item added to the cart");
+    });
 }
 
-function processOrder() {
-  if (cartCount > 0) {
-    cartCount = 0;
-    alert("Thank you for your order");
-  } else {
-    alert("Cart is empty");
-  }
+// CLEAR CART (checks if cart is empty first)
+if (clearCartButton) {
+    clearCartButton.addEventListener('click', function() {
+        if (cart_items > 0) {
+            cart_items = 0;
+            alert("Cart cleared");
+        } else {
+            alert("No items to clear.");
+        }
+    });
 }
 
-// ====== CONTACT FORM FEATURE ======
-function submitForm(event) {
-  event.preventDefault(); // prevents page reload
-  alert("Thank you for your message");
+// PROCESS ORDER (checks if cart is empty first)
+if (processOrderButton) {
+    processOrderButton.addEventListener('click', function() {
+        if (cart_items > 0) {
+            alert("Thank you for your order");
+            // Optional: cart_items = 0; // Clear cart after processing
+        } else {
+            alert("Cart is empty.");
+        }
+    });
+}
+
+// --- 3. Contact Form Submission (About/Contact Page) ---
+const contactSubmitButton = document.getElementById('contact-submit-btn');
+
+if (contactSubmitButton) {
+    contactSubmitButton.addEventListener('click', function(event) {
+        // Prevents the form from refreshing the page so the alert can be seen
+        event.preventDefault(); 
+        alert("Thank you for your message");
+    });
 }
