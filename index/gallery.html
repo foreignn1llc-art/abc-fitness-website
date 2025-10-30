@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" href="style.css">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - ABC Fitness Studio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - ABC Fitness Studio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { margin: 5px; padding: 5px 10px; }
+        #cartContents { margin-top: 20px; border: 1px solid #ccc; padding: 10px; width: 300px; }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Gallery</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="gallery.html">Gallery</a> |
-            <a href="about.html">About/Contact</a> |
-            <a href="community.html">Community</a>
-        </nav>
-    </header>
+    <h1>Gallery</h1>
 
-    <main>
-        <h2>Our Fitness Programs</h2>
-        <table>
-            <tr>
-                <td><img src="class1.jpg" alt="Yoga Class" width="200"><br>
-                    <button id="add-to-cart-btn">Add to Cart</button>
-                </td>
-                <td><img src="class2.jpg" alt="HIIT Class" width="200"><br>
-                    <button id="add-to-cart-btn">Add to Cart</button>
-                </td>
-                <td><img src="class3.jpg" alt="Strength Training" width="200"><br>
-                    <button id="add-to-cart-btn">Add to Cart</button>
-                </td>
-            </tr>
-        </table>
+    <div>
+        <h3>Yoga Mat - $25</h3>
+        <button onclick="addToCart('Yoga Mat', 25)">Add to Cart</button>
+    </div>
 
-        <div style="margin-top: 20px;">
-            <button id="clear-cart-btn">Clear Cart</button>
-            <button id="process-order-btn">Process Order</button>
-        </div>
-    </main>
+    <div>
+        <h3>Dumbbells - $40</h3>
+        <button onclick="addToCart('Dumbbells', 40)">Add to Cart</button>
+    </div>
 
-    <footer>
-        <p>© 2025 ABC Fitness Studio</p>
-                <button id="subscribe-btn">Subscribe</button>
-    </footer>
+    <div>
+        <h3>Resistance Bands - $15</h3>
+        <button onclick="addToCart('Resistance Bands', 15)">Add to Cart</button>
+    </div>
 
-    <script src="script.js"></script>
+    <hr>
+    <button onclick="viewCart()">View Cart</button>
+    <button onclick="clearCart()">Clear Cart</button>
+
+    <div id="cartContents"></div>
+
+    <script>
+        function addToCart(itemName, itemPrice) {
+            let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+            cart.push({name: itemName, price: itemPrice});
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + " added to cart!");
+        }
+
+        function viewCart() {
+            let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+            if(cart.length === 0){
+                document.getElementById('cartContents').innerHTML = "Your cart is empty.";
+                return;
+            }
+            let output = "<h3>Shopping Cart</h3>";
+            cart.forEach((item, index) => {
+                output += `${index + 1}. ${item.name} - $${item.price}<br>`;
+            });
+            document.getElementById('cartContents').innerHTML = output;
+        }
+
+        function clearCart() {
+            sessionStorage.removeItem('cart');
+            document.getElementById('cartContents').innerHTML = "Cart cleared!";
+        }
+    </script>
 </body>
 </html>
