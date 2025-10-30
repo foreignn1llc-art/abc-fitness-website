@@ -4,61 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - ABC Fitness Studio</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        button { margin: 5px; padding: 5px 10px; }
-        #cartContents { margin-top: 20px; border: 1px solid #ccc; padding: 10px; width: 300px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Gallery</h1>
+    <header>
+        <h1>ABC Fitness Studio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="custom.html">Promotions</a>
+        </nav>
+    </header>
 
-    <div>
-        <h3>Yoga Mat - $25</h3>
-        <button onclick="addToCart('Yoga Mat', 25)">Add to Cart</button>
+    <div class="container">
+        <h2>Our Products</h2>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/200" alt="Product 1">
+            <p>Yoga Mat</p>
+            <button onclick="addToCart('Yoga Mat')">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/200" alt="Product 2">
+            <p>Dumbbells</p>
+            <button onclick="addToCart('Dumbbells')">Add to Cart</button>
+        </div>
+
+        <button onclick="viewCart()">View Cart</button>
+
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Shopping Cart</h3>
+                <div id="cartItems"></div>
+                <button onclick="clearCart()">Clear Cart</button>
+                <button onclick="processOrder()">Process Order</button>
+            </div>
+        </div>
     </div>
 
-    <div>
-        <h3>Dumbbells - $40</h3>
-        <button onclick="addToCart('Dumbbells', 40)">Add to Cart</button>
-    </div>
+    <footer>
+        <p>© 2025 ABC Fitness Studio</p>
+    </footer>
 
-    <div>
-        <h3>Resistance Bands - $15</h3>
-        <button onclick="addToCart('Resistance Bands', 15)">Add to Cart</button>
-    </div>
-
-    <hr>
-    <button onclick="viewCart()">View Cart</button>
-    <button onclick="clearCart()">Clear Cart</button>
-
-    <div id="cartContents"></div>
-
-    <script>
-        function addToCart(itemName, itemPrice) {
-            let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-            cart.push({name: itemName, price: itemPrice});
-            sessionStorage.setItem('cart', JSON.stringify(cart));
-            alert(itemName + " added to cart!");
-        }
-
-        function viewCart() {
-            let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-            if(cart.length === 0){
-                document.getElementById('cartContents').innerHTML = "Your cart is empty.";
-                return;
-            }
-            let output = "<h3>Shopping Cart</h3>";
-            cart.forEach((item, index) => {
-                output += `${index + 1}. ${item.name} - $${item.price}<br>`;
-            });
-            document.getElementById('cartContents').innerHTML = output;
-        }
-
-        function clearCart() {
-            sessionStorage.removeItem('cart');
-            document.getElementById('cartContents').innerHTML = "Cart cleared!";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
