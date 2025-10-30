@@ -3,37 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us / Contact - ABC Fitness Studio</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        input, textarea { display: block; margin: 10px 0; padding: 5px; width: 300px; }
-        button { padding: 5px 10px; }
-    </style>
+    <title>About Us - ABC Fitness Studio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Contact Us / Custom Order</h1>
+    <header>
+        <h1>ABC Fitness Studio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="custom.html">Promotions</a>
+        </nav>
+    </header>
 
-    <form id="orderForm" onsubmit="saveOrder(event)">
-        <input type="text" id="customerName" placeholder="Name" required>
-        <input type="email" id="customerEmail" placeholder="Email" required>
-        <textarea id="customOrder" placeholder="Your custom order details" required></textarea>
-        <button type="submit">Submit Order</button>
-    </form>
+    <div class="container">
+        <h2>Contact Us / Custom Order</h2>
+        <form id="contactForm">
+            <input type="text" id="custName" placeholder="Your Name" required>
+            <input type="email" id="custEmail" placeholder="Your Email" required>
+            <textarea id="custOrder" placeholder="Your Custom Order Details" required></textarea>
+            <button type="button" onclick="submitContactForm()">Submit</button>
+        </form>
+    </div>
 
-    <script>
-        function saveOrder(event) {
-            event.preventDefault(); // Prevent page reload
-            let name = document.getElementById('customerName').value;
-            let email = document.getElementById('customerEmail').value;
-            let order = document.getElementById('customOrder').value;
+    <footer>
+        <p>© 2025 ABC Fitness Studio</p>
+    </footer>
 
-            let orders = JSON.parse(localStorage.getItem('orders')) || [];
-            orders.push({name: name, email: email, order: order});
-            localStorage.setItem('orders', JSON.stringify(orders));
-
-            alert("Order saved successfully!");
-            document.getElementById('orderForm').reset();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
