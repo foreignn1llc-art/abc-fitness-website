@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>CloudMedique</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -22,8 +11,8 @@
   <meta property="og:url" content="https://cloudmedique.ai">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/x-icon" href="https://i.ibb.co/7Xsj2V9/favicon.png">
+  <link rel="stylesheet" href="./style.css">
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -143,7 +132,7 @@
       transition: background 0.3s ease;
     }
     .cta-button:hover {
-      background-color: var(--gray);
+      background-color: var(--light);
     }
     .cta-button.alt {
       background: transparent;
@@ -178,72 +167,25 @@
       justify-content: center;
     }
     .roadmap-box {
-      background: var(--white);
+      background: var(--bg);
       border: 2px solid var(--primary);
       padding: 1.5rem;
       border-radius: 16px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.3s ease;
     }
     .roadmap-box:hover {
       transform: translateY(-5px);
     }
 
-    /* ===== DEMO / INVESTOR / LEAD MAGNET ===== */
-    #demo iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 12px;
-    }
-    #investor details {
-      text-align: left;
-      max-width: 700px;
-      margin: 1rem auto;
-      cursor: pointer;
-    }
-    #investor summary {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    #investor .cta-button {
-      margin-top: 1.5rem;
-    }
-    form {
-      max-width: 500px;
-      margin: 2rem auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input, textarea {
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      width: 100%;
-    }
-    button[type="submit"] {
-      padding: 0.75rem;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button[type="submit"]:hover {
-      background-color: var(--accent);
-    }
-
-    /* ===== CHATBOX ===== */
+    /* ===== CHATBOX UI ===== */
     #chatbox {
       position: fixed;
       bottom: 20px;
       right: 20px;
       width: 320px;
       height: 420px;
-      background: var(--white);
+      background: var(--bg);
       border: 2px solid var(--primary);
       border-radius: 12px;
       display: flex;
@@ -276,6 +218,8 @@
       border-radius: 20px;
       padding: 0.5rem 1rem;
       font-size: 14px;
+      background: var(--bg);
+      color: var(--txt);
     }
     #chatSend {
       margin-left: 0.5rem;
@@ -288,64 +232,11 @@
       cursor: pointer;
     }
 
-    /* ===== FOOTER ===== */
     footer {
       background: var(--dark);
       color: white;
       text-align: center;
       padding: 1rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .social-links a {
-      color: var(--accent);
-      margin: 0 0.5rem;
-      text-decoration: none;
-    }
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== DARK MODE ===== */
-    .dark {
-      --bg: #0d1117;
-      --txt: #c9d1d9;
-    }
-    .dark header,
-    .dark footer {
-      background-color: #161b22;
-    }
-    .dark .roadmap-box {
-      background-color: #1e293b;
-      border-color: var(--accent);
-    }
-    .dark input,
-    .dark textarea {
-      background-color: #161b22;
-      border: 1px solid var(--accent);
-      color: #c9d1d9;
-    }
-    .dark button[type="submit"] {
-      background-color: var(--accent);
-      color: #0d1117;
-    }
-
-    /* ===== RTL (Arabic) ===== */
-    .rtl {
-      direction: rtl;
-      text-align: right;
-    }
-    .rtl header {
-      flex-direction: row-reverse;
-    }
-    .rtl nav ul {
-      flex-direction: row-reverse;
-    }
-    .rtl .toggles {
-      flex-direction: row-reverse;
-    }
-    .rtl .hero,
-    .rtl .section {
-      text-align: right;
     }
   </style>
 </head>
@@ -384,7 +275,7 @@
 
 <section id="about" class="section">
   <h2 id="aboutTitle">Why CloudMedique™?</h2>
-  <p id="aboutText">We’re building the first secure, cloud-native, AI-powered healthcare platform tailored for the Middle East, integrating predictive population health analytics, smart EHR data interoperability, and compliance automation under one unified AI framework.</p>
+  <p id="aboutText">We’re building the first secure, cloud-native, AI-powered healthcare platform tailored for the Middle East.</p>
 </section>
 
 <section id="platform" class="section alt">
@@ -393,77 +284,34 @@
     <li><strong>AI-PHM:</strong> Predictive Population Health Management</li>
     <li><strong>Compliance Layer:</strong> HIPAA, GDPR, MOH automation</li>
     <li><strong>Smart Interop:</strong> Real-time EHR/LIS/FHIR data exchange</li>
-    <li><strong>Cloud-Native:</strong> Built for UAE & Saudi digital ecosystems</li>
-    <li><strong>AI Assistants:</strong> Integrated diagnostic & triage copilots</li>
-    <li><strong>Secure AI:</strong> Federated Learning + Blockchain Audit Trails</li>
   </ul>
 </section>
 
-<!-- ===== LIVE DEMO ===== -->
 <section id="demo" class="section">
-  <h2 id="demoTitle">Live Preview – Day-30 Post-Acquisition</h2>
+  <h2 id="demoTitle">Live Preview</h2>
   <div style="max-width:800px;margin:auto;">
     <iframe data-src="https://www.loom.com/embed/8d0b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:16/9;"></iframe>
   </div>
-  <p id="demoText">Arabic voice-over | 2-click compliance export | Predictive risk scores</p>
 </section>
 
-<!-- ===== INVESTOR SECTION ===== -->
 <section id="investor" class="section alt">
   <h2 id="investorTitle">Raising USD 750k Pre-Seed</h2>
   <details>
     <summary id="invSum1">What is the money for?</summary>
-    <p id="invAns1">Hospital acquisition escrow, bridge MVP, regulatory filings, 18-month runway.</p>
+    <p id="invAns1">Hospital acquisition escrow, bridge MVP, and regulatory filings.</p>
   </details>
-  <details>
-    <summary id="invSum2">Valuation & instrument?</summary>
-    <p id="invAns2">SAFE, cap USD 5m, 20 % discount, MFN clause, no-board-seat until Series A.</p>
-  </details>
-  <details>
-    <summary id="invSum3">Timeline?</summary>
-    <p id="invAns3">Close by 31 Aug 2025 → pilot revenue by Dec 2025 → Series A Q2-2026.</p>
-  </details>
-
   <div style="text-align:center;margin-top:25px;">
-    <a href="https://calendly.com/roy-mwangi/15min" class="cta-button" onclick="gtag('event','click',{'event_category':'CTA','event_label':'Calendly'});">Book 15-min Call</a>
+    <a href="https://calendly.com/roy-mwangi/15min" class="cta-button">Book 15-min Call</a>
   </div>
-</section>
-
-<!-- ===== LEAD MAGNET ===== -->
-<section class="section" style="background:#f8f9fa;">
-  <h2 id="leadTitle">Get the Arabic Medical AI Benchmark Report</h2>
-  <form action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="email" name="email" placeholder="your@email.com" required />
-    <input type="hidden" name="_subject" value="New Lead - CloudMedique" />
-    <button type="submit" class="cta-button">Download Free</button>
-  </form>
 </section>
 
 <section id="roadmap" class="section">
   <h2 id="roadmapTitle">Roadmap to $250B Valuation</h2>
   <div class="roadmap-grid">
-    <div class="roadmap-box">
-      <h3>2025</h3>
-      <p>MVP launch, secure $17M in halal funding, begin UAE pilot deployments.</p>
-    </div>
-    <div class="roadmap-box">
-      <h3>2026</h3>
-      <p>HQ in Dubai, scale to Saudi Arabia, reach $100M ARR, begin African pilot entry.</p>
-    </div>
-    <div class="roadmap-box">
-      <h3>2028</h3>
-      <p>Scale across GCC, launch patient-side app, explore Asia & Europe expansion.</p>
-    </div>
-    <div class="roadmap-box">
-      <h3>2035</h3>
-      <p>Target $250B valuation, $50B+ ARR, exit-ready by 32–35 with global footprint.</p>
-    </div>
+    <div class="roadmap-box"><h3>2025</h3><p>MVP launch & UAE pilot deployments.</p></div>
+    <div class="roadmap-box"><h3>2026</h3><p>Scale to Saudi Arabia, reach $100M ARR.</p></div>
+    <div class="roadmap-box"><h3>2035</h3><p>Target $250B valuation globally.</p></div>
   </div>
-</section>
-
-<section id="vision" class="section alt">
-  <h2 id="visionTitle">Our Vision</h2>
-  <p id="visionText">To become the world’s most intelligent and secure healthcare operating system for governments, enterprises, and patients — born in the Middle East and scaled globally.</p>
 </section>
 
 <section id="contact" class="section contact-section">
@@ -471,7 +319,7 @@
   <form action="https://formspree.io/f/your-form-id" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Message or Request a Pilot..."></textarea>
+    <textarea name="message" placeholder="Message..."></textarea>
     <button type="submit" class="cta-button">Submit</button>
   </form>
 </section>
@@ -479,14 +327,10 @@
 <footer>
   <p>© <span id="year">2025</span> CloudMedique Technologies Ltd. (ADGM)</p>
   <div class="social-links">
-    <a href="https://linkedin.com/company/cloudmedique" target="_blank">LinkedIn</a> |
-    <a href="https://twitter.com/CloudMedique" target="_blank">Twitter</a> |
-    <a href="mailto:roy@cloudmedique.ai">Contact</a>
+    <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="mailto:roy@cloudmedique.ai">Contact</a>
   </div>
-  <p style="font-size:12px;">Regulatory Sandbox Candidate – DHA Open-Data Partner</p>
 </footer>
 
-<!-- ===== AI CHATBOX ===== -->
 <div id="chatbox">
   <div id="chatHeader">💬 AI Assistant</div>
   <div id="chatMessages"></div>
@@ -497,101 +341,32 @@
 </div>
 
 <script>
-/* ===== CONFIG ===== */
-const AZURE_ENDPOINT = 'https://YOUR-RESOURCE.openai.azure.com/openai/deployments/YOUR-DEPLOYMENT/chat/completions?api-version=2023-05-15';
-const AZURE_KEY        = 'YOUR-AZURE-KEY';
+/* ===== OPENAI CONFIG ===== */
+const OPENAI_KEY = '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'; 
 
 const texts = {
   en: {
     heroTitle: 'Unified AI for Secure, Intelligent Healthcare',
     heroTag: 'Arabic-first, regulator-ready AI layer for hospitals in UAE & KSA.',
-    aboutTitle: 'Why CloudMedique™?',
-    aboutText: 'We’re building the first secure, cloud-native, AI-powered healthcare platform tailored for the Middle East, integrating predictive population health analytics, smart EHR data interoperability, and compliance automation under one unified AI framework.',
-    platformTitle: 'The UAIH™ Platform',
-    platformList: [
-      '<strong>AI-PHM:</strong> Predictive Population Health Management',
-      '<strong>Compliance Layer:</strong> HIPAA, GDPR, MOH automation',
-      '<strong>Smart Interop:</strong> Real-time EHR/LIS/FHIR data exchange',
-      '<strong>Cloud-Native:</strong> Built for UAE & Saudi digital ecosystems',
-      '<strong>AI Assistants:</strong> Integrated diagnostic & triage copilots',
-      '<strong>Secure AI:</strong> Federated Learning + Blockchain Audit Trails'
-    ],
-    demoTitle: 'Live Preview – Day-30 Post-Acquisition',
-    demoText: 'Arabic voice-over | 2-click compliance export | Predictive risk scores',
-    investorTitle: 'Raising USD 750k Pre-Seed',
-    invSum1: 'What is the money for?',
-    invAns1: 'Hospital acquisition escrow, bridge MVP, regulatory filings, 18-month runway.',
-    invSum2: 'Valuation & instrument?',
-    invAns2: 'SAFE, cap USD 5m, 20 % discount, MFN clause, no-board-seat until Series A.',
-    invSum3: 'Timeline?',
-    invAns3: 'Close by 31 Aug 2025 → pilot revenue by Dec 2025 → Series A Q2-2026.',
-    roadmapTitle: 'Roadmap to $250B Valuation',
-    roadmapBoxes: [
-      { year: '2025', text: 'MVP launch, secure $17M in halal funding, begin UAE pilot deployments.' },
-      { year: '2026', text: 'HQ in Dubai, scale to Saudi Arabia, reach $100M ARR, begin African pilot entry.' },
-      { year: '2028', text: 'Scale across GCC, launch patient-side app, explore Asia & Europe expansion.' },
-      { year: '2035', text: 'Target $250B valuation, $50B+ ARR, exit-ready by 32–35 with global footprint.' }
-    ],
-    visionTitle: 'Our Vision',
-    visionText: 'To become the world’s most intelligent and secure healthcare operating system for governments, enterprises, and patients — born in the Middle East and scaled globally.',
-    contactTitle: 'Partner With Us',
-    contactPlaceholders: { name: 'Your Name', email: 'Your Email', message: 'Message or Request a Pilot...', submit: 'Submit' },
-    footerCopyright: '© CloudMedique Technologies Ltd. (ADGM)',
-    footerLinks: ['LinkedIn', 'Instagram', 'YouTube'],
     chatPlaceholder: 'Type your message...',
     chatSend: 'Send'
   },
   ar: {
     heroTitle: 'الذكاء الاصطناعي الموحد للرعاية الصحية الآمنة والذكية',
     heroTag: 'الطبقة الأولى بالعربية، جاهزة للتنظيم، للمستشفيات في الإمارات والسعودية.',
-    aboutTitle: 'لماذا CloudMedique™؟',
-    aboutText: 'نحن نبني أول منصة رعاية صحية آمنة، سحابية، مدعومة بالذكاء الاصطناعي مصممة للشرق الأوسط، تدمج تحليلات صحة السكان التنبؤية، وتكامل بيانات EHR الذكية، وأتمتة الامتثال تحت إطار عمل ذكاء اصطناعي موحد.',
-    platformTitle: 'منصة UAIH™',
-    platformList: [
-      '<strong>إدارة صحة السكان التنبؤية (AI-PHM)</strong>',
-      '<strong>طبقة الامتثال:</strong> HIPAA، GDPR، أتمتة وزارة الصحة',
-      '<strong>التشغيل البيني الذكي:</strong> تبادل بيانات EHR/LIS/FHIR في الوقت الحقيقي',
-      '<strong>سحابية الأصل:</strong> مبنية لنظم الإمارات والسعودية الرقمية',
-      '<strong>مساعدي الذكاء الاصطناعي:</strong> مساعدي التشخيص والتصنيف المتكاملين',
-      '<strong>الذكاء الاصطناعي الآمن:</strong> التعلم الموحد + سجلات البلوكشين'
-    ],
-    demoTitle: 'معاينة مباشرة – بعد 30 يومًا من الاستحواذ',
-    demoText: 'تعليق صوتي عربي | تصدير الامتثال بنقرتين | درجات المخاطر التنبؤية',
-    investorTitle: 'جمع 750 ألف دولار ما قبل البذور',
-    invSum1: 'ما الذي ستُنفق عليه الأموال؟',
-    invAns1: 'ضمان الاستحواذ على المستشفى، جسر MVP، تقديمات تنظيمية، مدرج 18 شهرًا.',
-    invSum2: 'التقييم والأداة؟',
-    invAns2: 'SAFE، سقف 5 ملايين دولار، خصم 20 %، بند MFN، لا مقعد في مجلس الإدارة حتى السلسلة A.',
-    invSum3: 'الجدول الزمني؟',
-    invAns3: 'الإغلاق في 31 أغسطس 2025 → إيرادات التجربة في ديسمبر 2025 → السلسلة A الربع الثاني 2026.',
-    roadmapTitle: 'خارطة الطريق للوصول إلى تقييم 250 مليار دولار',
-    roadmapBoxes: [
-      { year: '2025', text: 'إطلاق MVP، تأمين تمويل 17 مليون دولار حلال، بدء تجارب الإمارات.' },
-      { year: '2026', text: 'المقر في دبي، التوسع إلى السعودية، الوصول إلى 100 مليون دولار ARR، بدء تجارب أفريقيا.' },
-      { year: '2028', text: 'التوسع عبر دول الخليج، إطلاق تطبيق للمريض، استكشاف آسيا وأوروبا.' },
-      { year: '2035', text: 'الاستهداف لتقييم 250 مليار دولار، أكثر من 50 مليار دولار ARR، جاهزية الخروج بين 32–35 عاماً مع بصمة عالمية.' }
-    ],
-    visionTitle: 'رؤيتنا',
-    visionText: 'أن نصبح أكثر نظم تشغيل الرعاية الصحية ذكاءً وأماناً للحكومات والمؤسسات والمرضى — مولودة في الشرق الأوسط وموسعة عالمياً.',
-    contactTitle: 'شاركنا الشراكة',
-    contactPlaceholders: { name: 'اسمك', email: 'بريدك الإلكتروني', message: 'رسالة أو طلب تجربة...', submit: 'إرسال' },
-    footerCopyright: '© CloudMedique Technologies Ltd. (ADGM)',
-    footerLinks: ['لينكدإن', 'إنستغرام', 'يوتيوب'],
     chatPlaceholder: 'اكتب رسالتك...',
     chatSend: 'إرسال'
   }
 };
 
-/* ===== LANGUAGE + RTL FLIP ===== */
 const langBtn = document.getElementById('lang');
 const darkBtn = document.getElementById('dark');
-const body  = document.body;
+const body = document.body;
 
 langBtn.addEventListener('click', () => {
   body.classList.toggle('rtl');
   const isRtl = body.classList.contains('rtl');
   langBtn.textContent = isRtl ? '🌐 English' : '🌐 Arabic';
-  applyLanguage(isRtl ? 'ar' : 'en');
 });
 
 darkBtn.addEventListener('click', () => {
@@ -599,116 +374,10 @@ darkBtn.addEventListener('click', () => {
   darkBtn.textContent = body.classList.contains('dark') ? '☀️ Light' : '🌓 Dark';
 });
 
-/* ===== APPLY LANGUAGE ===== */
-function applyLanguage(lang) {
-  const t = texts[lang];
-
-  // Hero
-  document.getElementById('heroTitle').textContent       = t.heroTitle;
-  document.getElementById('heroTag').textContent         = t.heroTag;
-
-  // About
-  document.getElementById('aboutTitle').textContent      = t.aboutTitle;
-  document.getElementById('aboutText').textContent       = t.aboutText;
-
-  // Platform
-  document.getElementById('platformTitle').textContent   = t.platformTitle;
-  document.getElementById('platformList').innerHTML      = t.platformList.map(li => `<li>${li}</li>`).join('');
-
-  // Demo
-  document.getElementById('demoTitle').textContent       = t.demoTitle;
-  document.getElementById('demoText').textContent        = t.demoText;
-
-  // Investor
-  document.getElementById('investorTitle').textContent   = t.investorTitle;
-  document.getElementById('invSum1').textContent         = t.invSum1;
-  document.getElementById('invAns1').textContent         = t.invAns1;
-  document.getElementById('invSum2').textContent         = t.invSum2;
-  document.getElementById('invAns2').textContent         = t.invAns2;
-  document.getElementById('invSum3').textContent         = t.invSum3;
-  document.getElementById('invAns3').textContent         = t.invAns3;
-
-  // Roadmap
-  document.getElementById('roadmapTitle').textContent    = t.roadmapTitle;
-  const boxes = document.querySelectorAll('.roadmap-box');
-  t.roadmapBoxes.forEach((box, i) => {
-    boxes[i].querySelector('h3').textContent = box.year;
-    boxes[i].querySelector('p').textContent  = box.text;
-  });
-
-  // Vision
-  document.getElementById('visionTitle').textContent     = t.visionTitle;
-  document.getElementById('visionText').textContent      = t.visionText;
-
-  // Contact
-  document.getElementById('contactTitle').textContent    = t.contactTitle;
-  const contactForm = document.querySelector('#contact form');
-  contactForm.querySelector('input[name="name"]').placeholder    = t.contactPlaceholders.name;
-  contactForm.querySelector('input[name="email"]').placeholder   = t.contactPlaceholders.email;
-  contactForm.querySelector('textarea[name="message"]').placeholder = t.contactPlaceholders.message;
-  contactForm.querySelector('button[type="submit"]').textContent = t.contactPlaceholders.submit;
-
-  // Footer
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.querySelector('footer p').innerHTML = t.footerCopyright;
-  const social = document.querySelectorAll('.social-links a');
-  social[0].textContent = t.footerLinks[0];
-  social[1].textContent = t.footerLinks[1];
-  social[2].textContent = t.footerLinks[2];
-
-  // Chat
-  document.getElementById('chatInput').placeholder = t.chatPlaceholder;
-  document.getElementById('chatSend').textContent  = t.chatSend;
-}
-
-/* ===== SMOOTH SCROLL ===== */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-
-/* ===== CALENDLY TRACKING ===== */
-document.querySelectorAll('a[href*="calendly"]').forEach(link => {
-  link.addEventListener('click', () => {
-    gtag('event', 'click', { event_category: 'CTA', event_label: 'Calendly' });
-  });
-});
-
-/* ===== LEAD-FORM HANDLER (Formspree) ===== */
-document.querySelectorAll('form').forEach(form => {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    gtag('event', 'generate_lead', { event_category: 'form', event_label: form.id || 'unknown' });
-    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-      .then(r => r.json())
-      .then(data => {
-        if (data.ok) form.innerHTML = '<p style="color:var(--success);font-weight:600;">✅ Sent! Check your inbox.</p>';
-        else form.innerHTML = '<p style="color:var(--danger);">❌ Error. Try again.</p>';
-      })
-      .catch(() => form.innerHTML = '<p style="color:var(--danger);">❌ Network error.</p>');
-  });
-});
-
-/* ===== LAZY-LOAD LOOM IFRAME ===== */
-const demoIframe = document.querySelector('#demo iframe');
-if (demoIframe) {
-  const src = demoIframe.dataset.src;
-  demoIframe.src = '';
-  const obs = new IntersectionObserver((entries, o) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { demoIframe.src = src; o.unobserve(demoIframe); }
-    });
-  }, { threshold: 0.25 });
-  obs.observe(demoIframe);
-}
-
-/* ===== CHATBOX ===== */
+/* ===== CHAT LOGIC ===== */
 const messagesBox = document.getElementById('chatMessages');
-const input       = document.getElementById('chatInput');
-const sendBtn     = document.getElementById('chatSend');
+const input = document.getElementById('chatInput');
+const sendBtn = document.getElementById('chatSend');
 
 sendBtn.addEventListener('click', () => sendMessage());
 input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
@@ -718,7 +387,7 @@ function sendMessage() {
   if (!msg) return;
   appendMessage(msg, 'user');
   input.value = '';
-  callAzureGPT(msg);
+  callOpenAI(msg);
 }
 
 function appendMessage(text, sender) {
@@ -730,30 +399,39 @@ function appendMessage(text, sender) {
   messagesBox.scrollTop = messagesBox.scrollHeight;
 }
 
-async function callAzureGPT(prompt) {
+async function callOpenAI(prompt) {
   appendMessage('...', 'ai');
   try {
-    const res = await fetch(AZURE_ENDPOINT, {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'api-key': AZURE_KEY },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_KEY}`
+      },
       body: JSON.stringify({
-        messages: [{ role: 'user', content: prompt }],
-        max_tokens: 150,
-        temperature: 0.7
+        model: "gpt-3.5-turbo",
+        messages: [
+          { role: 'system', content: 'You are CloudMedique AI, a specialized assistant for UAE and KSA medical clinics. Be professional and concise.' },
+          { role: 'user', content: prompt }
+        ]
       })
     });
     const data = await res.json();
     const ans = data.choices[0].message.content.trim();
     messagesBox.lastChild.innerHTML = `<strong>AI:</strong> ${ans}`;
   } catch (e) {
-    messagesBox.lastChild.innerHTML = `<strong>AI:</strong> Error – please try later.`;
+    messagesBox.lastChild.innerHTML = `<strong>AI:</strong> Service error. Check API credits.`;
   }
 }
+
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 </script>
 </body>
-</html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
 </html>
